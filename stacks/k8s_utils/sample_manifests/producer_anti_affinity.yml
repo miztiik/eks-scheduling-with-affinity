@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: on-demand-producers
+spec:
+  selector:
+    matchLabels:
+      app: miztiik-producer
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: miztiik-producer
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - miztiik-consumer
+            topologyKey: "kubernetes.io/hostname"
+      nodeSelector:
+        app: miztiik_on_demand_ng
+      containers:
+      - name: busybox
+        image: busybox
+        command: [ "sh", "-c", "sleep 10h" ]

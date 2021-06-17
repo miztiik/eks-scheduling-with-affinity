@@ -9,14 +9,14 @@ setuptools.setup(
     name="eks_scheduling_with_affinity",
     version="0.0.1",
 
-    description="An empty CDK Python app",
+    description="eks-scheduling-with-affinity",
     long_description=long_description,
     long_description_content_type="text/markdown",
 
     author="author",
 
-    package_dir={"": "eks_scheduling_with_affinity"},
-    packages=setuptools.find_packages(where="eks_scheduling_with_affinity"),
+    package_dir={"": "stacks"},
+    packages=setuptools.find_packages(where="stacks"),
 
     install_requires=[
         "aws-cdk.core==1.108.1",

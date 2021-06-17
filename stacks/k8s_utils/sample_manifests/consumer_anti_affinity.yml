@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spot-consumers
+spec:
+  selector:
+    matchLabels:
+      app: miztiik-consumer
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: miztiik-consumer
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - miztiik-producer
+            topologyKey: "kubernetes.io/hostname"
+      nodeSelector:
+        app: miztiik_spot_ng
+      containers:
+      - name: busybox
+        image: busybox
+        command: [ "sh", "-c", "sleep 10h" ]

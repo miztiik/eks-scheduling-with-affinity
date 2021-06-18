@@ -6,7 +6,7 @@ In this application, Kubernetes has been chosen as the platform to host the prod
 
 Can you help them?
 
-![Miztiik Automation: Kubernetes Scheduling: Node Selection, Affinity & AntiAffinity](images/miztiik_automation_eks_security_with_psp_architecture_000.png)
+![Miztiik Automation: Kubernetes Scheduling: Node Selection, Affinity & AntiAffinity](images/miztiik_automation_eks_scheduling_with_affinity_architecture_000.png)
 
 ## 🎯 Solutions
 

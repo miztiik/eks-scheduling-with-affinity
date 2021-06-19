@@ -182,9 +182,9 @@ In this demo, I will show you how to use these options to constrain your pod dep
 
    1. **Create Consumers**:
 
-      Since this is demo is about `nodeSelector` and _affinity_ feature of kubernetes, We will run _busybox_ image and label it `miztiik-producer`. We will later use this label to constraint our consumers.
+      Since this is demo is about `nodeSelector` and _affinity_ feature of kubernetes, We will run _busybox_ image and label it `miztiik-consumer`. We will later use this label to constraint our consumers.
 
-      I have included a sample manifest here `stacks/k8s_utils/sample_manifests/producer_anti_affinity.yml`. The interesting thing to note here is the node selector label `miztiik_spot_ng`. This will ensure the deployment runs only on spot instances. We are also using the `podAntiAffinity` to ensure that none of the consumers are placed alongside producer pods.
+      I have included a sample manifest here `stacks/k8s_utils/sample_manifests/consumer_anti_affinity.yml`. The interesting thing to note here is the node selector label `miztiik_spot_ng`. This will ensure the deployment runs only on spot instances. We are also using the `podAntiAffinity` to ensure that none of the consumers are placed alongside producer pods.
 
       ```text
       apiVersion: apps/v1

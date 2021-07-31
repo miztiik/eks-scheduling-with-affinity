@@ -22,7 +22,7 @@
       },
       { "project": "eks-scheduling-with-affinity" },
       {
-        "github_repo_url": "https://github.com/miztiik/scale-eks-with-keda-irsa-pod-irsa"
+        "github_repo_url": "https://github.com/miztiik/eks-scheduling-with-affinity"
       }
     ]
   }
